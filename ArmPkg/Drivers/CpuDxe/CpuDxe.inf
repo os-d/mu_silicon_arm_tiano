@@ -52,6 +52,7 @@
   PeCoffGetEntryPointLib
   UefiDriverEntryPoint
   UefiLib
+  DxeMemoryProtectionHobLib
 
 [Protocols]
   gEfiCpuArchProtocolGuid
@@ -65,7 +66,6 @@
 
 [Pcd.common]
   gArmTokenSpaceGuid.PcdVFPEnabled
-  gEfiMdeModulePkgTokenSpaceGuid.PcdDxeNxMemoryProtectionPolicy
 
 [FeaturePcd.common]
   gArmTokenSpaceGuid.PcdDebuggerExceptionSupport

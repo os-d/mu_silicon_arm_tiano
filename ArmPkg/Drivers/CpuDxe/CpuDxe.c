@@ -13,6 +13,8 @@
 
 #include <Library/MemoryAllocationLib.h>
 
+#include <Library/DxeMemoryProtectionHobLib.h>
+
 BOOLEAN  mIsFlushingGCD;
 
 /**
@@ -241,7 +243,6 @@ RemapUnusedMemoryNx (
   VOID
   )
 {
-  UINT64                 TestBit;
   UINTN                  MemoryMapSize;
   UINTN                  MapKey;
   UINTN                  DescriptorSize;
@@ -251,8 +252,7 @@ RemapUnusedMemoryNx (
   EFI_MEMORY_DESCRIPTOR  *MemoryMapEnd;
   EFI_STATUS             Status;
 
-  TestBit = LShiftU64 (1, EfiBootServicesData);
-  if ((PcdGet64 (PcdDxeNxMemoryProtectionPolicy) & TestBit) == 0) {
+  if (gDxeMps.NxProtectionPolicy.Fields.EfiBootServicesData == 0) {
     return;
   }
 

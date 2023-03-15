@@ -95,6 +95,7 @@
 
   ArmSvcLib|ArmPkg/Library/ArmSvcLib/ArmSvcLib.inf              # MU_CHANGE
   SafeIntLib|MdePkg/Library/BaseSafeIntLib/BaseSafeIntLib.inf   # MU_CHANGE
+  DxeMemoryProtectionHobLib|MdeModulePkg/Library/DxeMemoryProtectionHobLib/DxeMemoryProtectionHobLib.inf
 
 [LibraryClasses.common.PEIM]
   HobLib|MdePkg/Library/PeiHobLib/PeiHobLib.inf
